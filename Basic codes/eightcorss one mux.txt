@@ -1,0 +1,25 @@
+module eightmux(a,s,y)
+input [0:7]a,[0;2]s;
+output reg y;
+always @(a[0]|a[1]|a[2]|a[3]|a[4]|a[5]|a[6]|a[7]|s[0]|s[1]|s[2])
+begin
+if(s0==0&s1==0&s2==0)
+y<=a0;
+else if(s0==1&s1==0&s2==0)
+y<=a1;
+else if(s0==0&s1==1&s2==0)
+y<=a2;
+else if(s0==1&s1==1&s2==0)
+y<=a3;
+else if(s0==0&s1==0&s2==1)
+y<=a4;
+else if(s0==1&s1==0&s2==1)
+y<=a5;
+else if(s0==0&s1==1&s2==1)
+y<=a6;
+else 
+y<=a7;
+end
+endmodule
+
+ 

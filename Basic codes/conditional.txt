@@ -1,0 +1,7 @@
+//boolean expression :s2's1's0'd0 + s2's1's0d1 + s2's1s0'd2 + s2's1s0d3 + s2s1's0'd4 + s2s1's0d5 +s2s1s0'd6 +s2s1s0d7 
+module mux(y,s,d);
+input s;
+input [0:7]d;
+output y;
+assign y=s[2]?(s[1]?(s[0]?(d[7]:d[6])):(s[0]?(d[5]:d[4])):(s[1]?(s[0]?(d[3]:d[2])):(s[0]?(d[1]:d[0])));//condition for 8*1 mux
+endmodule;
