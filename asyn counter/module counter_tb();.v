@@ -1,0 +1,34 @@
+module counter_tb();
+   reg clk,Rst;
+   wire [2:0]out;
+   counter DUT(clk,Rst,out);
+   always
+      begin
+       clk <=1;
+       #10;
+       clk <=0;
+       #10;
+      end
+
+   task initialize;
+     begin
+         Rst<=0;
+     end
+   endtask
+
+   task Rst_tsk();
+      begin
+          @(negedge clk)
+          Rst <= 1;
+          @(negedge clk)
+          Rst <= 0;
+      end
+   endtask
+   initial
+     begin
+         initialize;
+         #30;
+         Rst_tsk;
+         #50;
+     end
+endmodule

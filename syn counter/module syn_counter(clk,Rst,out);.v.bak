@@ -1,0 +1,11 @@
+module syn_counter(clk,Rst,out);
+   input clk,Rst;
+   output reg [3:0]out;
+   always @(posedge clk)
+     begin
+        if(Rst==1)
+            out<=0;
+        else
+            out<=out+1;
+     end
+endmodule
